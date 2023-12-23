@@ -4,7 +4,7 @@ import { LoginForm } from "@/components/organisms/LoginForm";
 export default function Home() {
   return (
     <main className={styles.container}>
-      <h1>dai chat</h1>
+      <h1 className={styles.title}>dai chat</h1>
 
       <LoginForm />
     </main>
