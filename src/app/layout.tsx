@@ -1,26 +1,22 @@
-import type { Metadata } from 'next'
-import '../styles/globals.css'
-import '@radix-ui/themes/styles.css'
-import { Theme } from '@radix-ui/themes'
-
+import type { Metadata } from "next";
+import "../styles/globals.css";
+import { Theme } from "@radix-ui/themes";
 
 export const metadata: Metadata = {
-  title: 'dai chat',
-  description: 'みんなでチャット！',
-}
+  title: "dai chat",
+  description: "みんなでチャット！",
+};
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="ja">
       <body>
-        <Theme>
-          {children}
-        </Theme>
+        <Theme>{children}</Theme>
       </body>
     </html>
-  )
+  );
 }
