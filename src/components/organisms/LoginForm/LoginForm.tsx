@@ -1,10 +1,13 @@
 "use client";
 
 import { Button } from "@/components/atoms/Button";
-import { Text } from "@radix-ui/themes";
+import { Text, TextField } from "@radix-ui/themes";
 import * as styles from "./LoginForm.css";
 import { registerLoginUser } from "./hooks";
 import { useRouter } from "next/navigation";
+import { useForm } from "react-hook-form";
+
+const USERNAME_MAXLENGTH = 10;
 
 /**
  * ログインフォーム
@@ -12,19 +15,31 @@ import { useRouter } from "next/navigation";
  */
 const LoginForm = () => {
   const router = useRouter();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<{ name: string }>();
+
   return (
     <div>
       <form
         action="/chat"
-        onSubmit={(e) => {
-          e.preventDefault();
-          registerLoginUser();
-          router.push("/chat");
-        }}
+        onSubmit={handleSubmit((data) => console.log("form", data))}
       >
         <div className={styles.textField}>
-          {/* TODO: テキストフィールドにする */}
-          <Text>なまえを入力</Text>
+          <TextField.Input
+            {...register("name", {
+              required: "必須項目です。",
+              maxLength: {
+                value: USERNAME_MAXLENGTH,
+                message: "5文字以内で入力！",
+              },
+            })}
+            placeholder="なまえを入力してください"
+            maxLength={USERNAME_MAXLENGTH}
+          />
+          {errors.name && <Text color="red">{errors.name.message}</Text>}
         </div>
 
         <div>

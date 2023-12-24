@@ -21,8 +21,8 @@ export const Default = {
 
 export const Disabled = {
   args: {
-    type: "button",
     children: "非活性ボタン",
+    size: "4",
     disabled: true,
   },
 } satisfies Story;
