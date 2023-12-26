@@ -2,5 +2,10 @@
   "extends": [
     "next/core-web-vitals",
     "plugin:storybook/recommended"
-  ]
+  ],
+  "rules": {
+    // オプション["エラータイプ", "指定する内容"]
+    "semi": ["error", "always"],
+    "quotes": ["error", "double"]
+  }
 }
