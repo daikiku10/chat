@@ -3,8 +3,8 @@
 import { Button } from "@/components/atoms/Button";
 import { Text, TextField } from "@radix-ui/themes";
 import * as styles from "./LoginForm.css";
-import { registerLoginUser } from "./hooks";
-import { useRouter } from "next/navigation";
+// import { registerLoginUser } from "./hooks";
+// import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 
 const USERNAME_MAXLENGTH = 10;
@@ -14,7 +14,7 @@ const USERNAME_MAXLENGTH = 10;
  * @returns コンポーネント
  */
 const LoginForm = () => {
-  const router = useRouter();
+  // const router = useRouter();
   const {
     register,
     handleSubmit,
