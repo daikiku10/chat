@@ -1,0 +1,36 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LoginForm renders homepage unchanged 1`] = `
+<div>
+  <div>
+    <form
+      action="/chat"
+    >
+      <div>
+        <div
+          class="rt-TextFieldRoot"
+        >
+          <input
+            class="rt-TextFieldInput rt-r-size-2 rt-variant-surface"
+            maxlength="10"
+            name="name"
+            placeholder="なまえを入力してください"
+            spellcheck="false"
+          />
+          <div
+            class="rt-TextFieldChrome"
+          />
+        </div>
+      </div>
+      <div>
+        <button
+          class="rt-reset rt-BaseButton rt-Button rt-r-size-4 rt-variant-solid"
+          type="submit"
+        >
+          チャットをはじめる
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+`;
