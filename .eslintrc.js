@@ -1,21 +1,15 @@
 module.exports = {
-  extends: [
-    "next/core-web-vitals",
-    "plugin:storybook/recommended",
-    "eslint:recommended",
-  ],
+  extends: ["next/core-web-vitals", "plugin:storybook/recommended", "prettier"],
   rules: {
     // オプション["エラータイプ", "指定する内容"]
     semi: ["error", "always"],
     quotes: "error",
-    "no-undef": "error",
   },
   // 機能を拡張する(ルール)
   // "plugins": []
 
   // eslintrcの設定全体を拡張する
   // "extends"
-
   // package.jsonのreactのバージョンを確認させる
   settings: {
     react: {

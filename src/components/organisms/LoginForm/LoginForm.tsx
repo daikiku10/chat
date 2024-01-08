@@ -3,8 +3,7 @@
 import { Button } from "@/components/atoms/Button";
 import { Text, TextField } from "@radix-ui/themes";
 import * as styles from "./LoginForm.css";
-// import { registerLoginUser } from "./hooks";
-// import { useRouter } from "next/navigation";
+import { registerLoginUser } from "./hooks";
 import { useForm } from "react-hook-form";
 
 const USERNAME_MAXLENGTH = 10;
@@ -25,7 +24,9 @@ const LoginForm = () => {
     <div>
       <form
         action="/chat"
-        onSubmit={handleSubmit((data) => console.log("form", data))}
+        onSubmit={handleSubmit((data) => {
+          registerLoginUser(data.name);
+        })}
       >
         <div className={styles.textField}>
           <TextField.Input
@@ -33,7 +34,7 @@ const LoginForm = () => {
               required: "必須項目です。",
               maxLength: {
                 value: USERNAME_MAXLENGTH,
-                message: "5文字以内で入力！",
+                message: "10文字以内で入力！",
               },
             })}
             placeholder="なまえを入力してください"
