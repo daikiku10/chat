@@ -1,7 +1,10 @@
+import { Flex } from "@mantine/core";
+import { ErrorBoundary } from "next/dist/client/components/error-boundary";
+
 export default function Page() {
   return (
-    <div>
-      <h1>チャットへようこそ！</h1>
-    </div>
+    <Flex h="100vh" justify="center" align="center">
+      <h1>Welcome!</h1>
+    </Flex>
   );
 }
