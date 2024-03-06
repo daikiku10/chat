@@ -5,6 +5,8 @@ import { Text, TextField } from "@radix-ui/themes";
 import * as styles from "./LoginForm.css";
 import { registerLoginUser } from "./hooks";
 import { useForm } from "react-hook-form";
+import { useOfferYear } from "@/hooks/use-offer-year";
+import { useEffect } from "react";
 
 const USERNAME_MAXLENGTH = 10;
 
@@ -19,6 +21,13 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<{ name: string }>();
+
+  const { offerYear, setOfferYear } = useOfferYear();
+  console.log(offerYear);
+
+  useEffect(() => {
+    setOfferYear("2023");
+  }, [setOfferYear]);
 
   return (
     <div>
@@ -47,6 +56,7 @@ const LoginForm = () => {
           <Button className={styles.button} type="submit" size="4">
             チャットをはじめる
           </Button>
+          <Button onClick={() => setOfferYear("2222")}>test</Button>
         </div>
       </form>
     </div>
